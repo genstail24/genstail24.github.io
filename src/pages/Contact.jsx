@@ -5,7 +5,12 @@ import MyTemplate from './../components/MyTemplate'
 const Contact = () => {
   return (
     <>
-      <MyTemplate>
+      <MyTemplate
+        pageMeta={{
+          title: 'Contact Me',
+          keywords: ['genstail24', 'muhammad genta ath tharriq', 'curlyBrackets', 'contact genta', 'contact']
+        }}
+      >
         <main className="pt-32 px-8 md:px-16 sm:px-36 md:px-48 lg:px-16 flex flex-col items-center relative z-30 text-my-white">
           <h1 className="text-5xl semibold">
             <span className="text-my-blue-light border-b-4 border-my-blue-light font-semibold">Contact</span> 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logoWithoutBorder from './../assets/images/logoWithoutBorder.png';
+import { Helmet } from 'react-helmet';
 
 const MyTemplate = (props) => {
 
@@ -25,6 +26,11 @@ const MyTemplate = (props) => {
 
   return (
     <>
+      <Helmet>
+        <title>Genstail24 | {props.pageMeta.title}</title>
+        <meta name="description" content="Hello World! Welcome to genstail24 official website. I am Muhammad Genta. I hope you have a great day." />
+        <meta name="keywords" content={props.pageMeta.keywords} />
+      </Helmet>
       <header className="fixed z-40 w-full top-0 left-0">
         <div className="px-4 pt-4 md:px-16 md:pt-8 w-full flex items-center justify-between">
           <button className="flex items-center justify-center flex-wrap ml-4 mt-4 md:mt-0 md:ml-0 focus:outline-none">

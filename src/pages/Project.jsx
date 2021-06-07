@@ -11,6 +11,9 @@ const Project = (props) => {
     const project = projects().filter(project => {
       return project.name.toLowerCase() === params
     })[0]
+    if(!project){
+      props.history.push('/projects')
+    }
     setProject(prev => ({
       ...project
     }))
@@ -71,7 +74,12 @@ const Project = (props) => {
 
   return (
     <>
-      <MyTemplate>
+      <MyTemplate
+        pageMeta={{
+          title: (project.name || ''),
+          keywords: ['genstail24', 'muhammad genta ath tharriq', 'curlyBrackets', 'projects genta', 'projects', 'project', (project.name || '')]
+        }}
+      >
           <main className="pt-32 flex w-full flex-col items-center relative z-30 text-my-white">
           <h1 className="text-5xl semibold text-center px-2 md:p-0">
             <span className="text-my-blue-light border-b-4 border-my-blue-light">
@@ -80,13 +88,13 @@ const Project = (props) => {
           </h1>
           <div className="mt-4 py-8 px-4 flex items-center justify-center overflow-hidden ">
 
-            <div className="my-2 px-1 w-full shadow-2xl lg:my-4 lg:px-4">
+            <div className="my-2 px-1 w-full sm:w-2/3 shadow-2xl lg:my-4 lg:px-4">
                 {/*<!-- Article -->*/}
                 <article className="overflow-hidden rounded-lg">
                     <img alt={project.name} title={project.name} className="block h-auto w-full" src={project.image || ''} />
                     <header className="flex flex-col leading-tight p-2 md:p-4">
                         <h2 className="mb-2 text-lg font-bold">
-                            <NavLink to={`/project/${getURL(project.name)}`}>
+                            <NavLink to={`/project/${getURL(project.name) || ''}`} exact={true}>
                                 {project.name || ''}
                             </NavLink>
                         </h2>
@@ -97,7 +105,6 @@ const Project = (props) => {
                           }}></span>
                         </p>
                     </header>
-
                     <footer className="flex items-center justify-between leading-none p-2 md:p-4">
                         <a href={project.to || ''} target="_blank" className="flex items-center no-underline hover:underline hover:bg-purple-light text-white font-black rounded-full mt-1 mb-2" >
                              {project.action || ''}

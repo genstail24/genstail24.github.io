@@ -15,7 +15,12 @@ const About = () => {
   
   return (
     <>
-      <MyTemplate>
+      <MyTemplate
+        pageMeta={{
+          title: 'About',
+          keywords: ['genstail24', 'muhammad genta ath tharriq', 'curlyBrackets', 'about genta', 'about']
+        }}
+      >
         <main className="pt-32 px-8 md:px-16 flex flex-col relative items-center z-30 text-my-white">
           <h1 className="text-5xl semibold">
             <span className="text-my-blue-light border-b-4 border-my-blue-light">About</span> 

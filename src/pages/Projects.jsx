@@ -41,7 +41,7 @@ const Projects = (props) => {
       {
         id: 5,
         name: 'Whatsapp Client Bot',
-        description: 'This bot was made using <a className="text-my-blue-dark text-red-900" href="https://github.com/pedroslopez/whatsapp-web.js/"target="_blank">Whatsapp-web.js</a> by Perdoloopez.',
+        description: 'This bot was made using <a className="text-my-blue-dark text-red-900 underline" href="https://github.com/pedroslopez/whatsapp-web.js/"target="_blank">Whatsapp-web.js</a> by Perdoloopez.',
         action: 'Visit me',
         to: `https://github.com/genstail24/node-whatsapp-bot`,
         image: Logo
@@ -56,7 +56,12 @@ const Projects = (props) => {
 
   return (
     <>
-      <MyTemplate>
+      <MyTemplate
+        pageMeta={{
+          title: 'Projects',
+          keywords: ['genstail24', 'muhammad genta ath tharriq', 'curlyBrackets', 'projects genta', 'projects', 'project']
+        }}
+      >
           <main className="pt-32 flex flex-col items-center relative z-30 text-my-white">
           <h1 className="text-5xl semibold">
             my&nbsp;
