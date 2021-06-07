@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import logoWithoutBorder from './assets/images/logoWithoutBorder.png';
 
 // pages
 import Home from './pages/Home';

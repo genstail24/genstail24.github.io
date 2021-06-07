@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logoWithoutBorder from './../assets/images/logoWithoutBorder.png';
+import LogoWithoutBorder from './../assets/images/logoWithoutBorder.png';
+import Logo from './../assets/images/logo.ico';
 import { Helmet } from 'react-helmet';
 
 const MyTemplate = (props) => {
@@ -34,7 +35,7 @@ const MyTemplate = (props) => {
       <header className="fixed z-40 w-full top-0 left-0">
         <div className="px-4 pt-4 md:px-16 md:pt-8 w-full flex items-center justify-between">
           <button className="flex items-center justify-center flex-wrap ml-4 mt-4 md:mt-0 md:ml-0 focus:outline-none">
-            <img src={logoWithoutBorder} className="h-24 md:h-36" />
+            <img src={LogoWithoutBorder} className="h-24 md:h-36" />
           </button>
           <button type="button" onClick={handleOpenMenu} id="hamburger" className="text-my-blue-light transition focus:outline-none md:hidden focus:outline-none">
             <svg className="fill-current h-20 w-24" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

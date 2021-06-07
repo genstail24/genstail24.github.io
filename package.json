@@ -1,10 +1,13 @@
 {
   "name": "newportfolio",
   "version": "0.0.0",
+  "homepage": "https://genstail24.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -b main -d dist" 
   },
   "dependencies": {
     "react": "^17.0.0",

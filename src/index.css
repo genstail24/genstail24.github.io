@@ -10,10 +10,6 @@
 }
 
 @layer utilities {
-
-	.active {
-		@apply text-my-white bg-my-blue-light;
-	}
 	/*scrollbar reset*/
 	::-webkit-scrollbar {
 	    height: 12px;
@@ -125,4 +121,8 @@
 	        box-shadow: 0 0 5px 0.5px rgba(150, 150, 150, 0.6);
 	    }
 	}
+}
+
+.active {
+	@apply text-my-white bg-my-blue-light;
 }
