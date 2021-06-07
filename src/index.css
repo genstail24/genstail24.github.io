@@ -7,14 +7,13 @@
 	.my-button {
 		@apply inline-block px-4 py-2 bg-my-blue-dark rounded-lg text-my-white uppercase text-xl transition hover:bg-my-white hover:text-my-blue-dark;
 	}
-
 }
 
-	/*active {
-		@apply bg-my-blue-light text-my-white;
-	}*/
-
 @layer utilities {
+
+	.active {
+		@apply text-my-white bg-my-blue-light;
+	}
 	/*scrollbar reset*/
 	::-webkit-scrollbar {
 	    height: 12px;
@@ -86,7 +85,7 @@
 	  
 	@keyframes twinkle {
 	    from {
-	        transform: scale(.5);
+	        transform: scale(.1);
 	    }
 	    to {
 	        transform: scale(1.5);

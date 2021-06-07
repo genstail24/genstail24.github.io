@@ -19,35 +19,49 @@ const MyTemplate = (props) => {
       document.getElementById('close').classList.add('hidden')
   }
 
+  const setOverFlow = () => {
+      document.documentElement.style.overflowY = "auto";
+  }
+
   return (
     <>
       <header className="fixed z-40 w-full top-0 left-0">
         <div className="px-4 pt-4 md:px-16 md:pt-8 w-full flex items-center justify-between">
-          <NavLink to="#" className="flex items-center justify-center flex-wrap ml-4 mt-4 md:mt-0 md:ml-0">
+          <button className="flex items-center justify-center flex-wrap ml-4 mt-4 md:mt-0 md:ml-0 focus:outline-none">
             <img src={logoWithoutBorder} className="h-24 md:h-36" />
-          </NavLink>
-          <button type="button" onClick={handleOpenMenu} id="hamburger" className="text-my-blue-light transition focus:outline-none md:hidden">
+          </button>
+          <button type="button" onClick={handleOpenMenu} id="hamburger" className="text-my-blue-light transition focus:outline-none md:hidden focus:outline-none">
             <svg className="fill-current h-20 w-24" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
           </button>
-          <NavLink to="#" onClick={handleCloseMenu} className="absolute h-24 w-24 hidden top-0 right-0 flex justify-center items-center text-my-blue-light m-4 font-bold md:hidden z-50" id="close">
-            <svg className="fill-current" viewBox="0 0 24 24">
-              <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+          <button to="#" onClick={handleCloseMenu} className="absolute hidden top-0 right-0 flex justify-center items-center text-my-blue-light m-4 font-bold md:hidden z-50 focus:outline-none" id="close">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="fill-current h-24 w-24 feather feather-x"  
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
-          </NavLink>
+          </button>
           {/* <nav class="absolute z-50 top-0 left-0 flex flex-col  justify-center items-center w-screen h-screen bg-my-blue-dark text-my-white md:static md:bg-transparent" id="nav"> */}
           <nav className="absolute h-screen w-full flex flex-col justify-center items-center bg-my-blue-dark top-0 left-0 z-30 text-gray-100 h-full w-full md:static md:flex md:items-end md:content-center md:h-auto md:w-auto md:text-center md:bg-transparent transition hidden" id="nav">
-            <NavLink to="/" onClick={handleCloseMenu} className="p-2 mb-2 text-2xl transition rounded-lg text-my-blue-light hover:text-my-white active:bg-my-blue-light active:text-my-white">Home</NavLink>
-            <NavLink to="/about" onClick={handleCloseMenu} className="p-2 mb-2 text-2xl transition rounded-lg text-my-blue-light hover:text-my-white active:bg-my-blue-light active:text-my-white">About</NavLink>
-            <NavLink to="/projects" onClick={handleCloseMenu} className="p-2 mb-2 text-2xl transition rounded-lg text-my-blue-light hover:text-my-white active:bg-my-blue-light active:text-my-white">Projects</NavLink>
-            <NavLink to="/contact" onClick={handleCloseMenu} className="p-2 mb-2 text-2xl transition rounded-lg text-my-blue-light hover:text-my-white active:bg-my-blue-light active:text-my-white">Contact</NavLink>
+            <NavLink to="/" exact={true} onClick={setOverFlow} className="p-2 mb-2 text-2xl transition rounded-lg text-my-blue-light hover:text-my-white active:bg-my-blue-light active:text-my-white">Home</NavLink>
+            <NavLink to="/about" onClick={setOverFlow} className="p-2 mb-2 text-2xl transition rounded-lg text-my-blue-light hover:text-my-white active:bg-my-blue-light active:text-my-white">About</NavLink>
+            <NavLink to="/projects" onClick={setOverFlow} className="p-2 mb-2 text-2xl transition rounded-lg text-my-blue-light hover:text-my-white active:bg-my-blue-light active:text-my-white">Projects</NavLink>
+            <NavLink to="/contact" onClick={setOverFlow} className="p-2 mb-2 text-2xl transition rounded-lg text-my-blue-light hover:text-my-white active:bg-my-blue-light active:text-my-white">Contact</NavLink>
           </nav>
         </div>
       </header>
       {props.children}
-      <footer className="w-full static pt-8 px-16 bottom-0 lg:fixed z-40 overflow-hidden">
+      <footer className="w-full bg-transparent border-none pt-4 px-4 overflow-hidden">
         <div className="w-full h-full flex justify-center mx-auto ">
           <a href="mailto:muhammadgentaaththarriq@gmail.com" target="_blank" className="w-20 h-20 flex justify-center items-center bg-my-white text-my-blue-light rounded-3xl text-gray-100 mx-2 text-my-blue-light my-footer-card overflow-hidden hover:text-my-white">
             <svg className="fill-current w-8" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xmlSpace="preserve">

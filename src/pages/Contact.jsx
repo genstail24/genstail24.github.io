@@ -6,12 +6,12 @@ const Contact = () => {
   return (
     <>
       <MyTemplate>
-        <main className="mt-24 px-16 sm:px-36 md:px-48 lg:px-16 flex flex-col items-center relative z-30 text-my-white">
+        <main className="pt-32 px-8 md:px-16 sm:px-36 md:px-48 lg:px-16 flex flex-col items-center relative z-30 text-my-white">
           <h1 className="text-5xl semibold">
             <span className="text-my-blue-light border-b-4 border-my-blue-light font-semibold">Contact</span> 
             &nbsp;me
           </h1>
-          <div className="mt-4 py-8 flex flex-col w-full lg:flex-row lg:justify-center ">
+          <div className="py-8 flex flex-col w-full lg:flex-row lg:justify-center ">
             <div className="w-full lg:w-1/3">
               <h2 className="text-3xl text-my-white text-center lg:text-left">Detail Information</h2>
               <div className="mt-4 mb-2">

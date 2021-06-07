@@ -6,6 +6,7 @@ import logoWithoutBorder from './assets/images/logoWithoutBorder.png';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
+import Project from './pages/Project';
 import Contact from './pages/Contact';
 
 const App = () => {
@@ -66,6 +67,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" component={Projects} />
+          <Route exact path="/project/:slug" component={Project} />
           <Route exact path="/contact" component={Contact} />
           {/*
           <Route exact path="/contact" component={Contact} />*/}
