@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+	.my-button {
+		@apply inline-block px-4 py-2 bg-my-blue-dark rounded-lg text-my-white uppercase text-xl transition hover:bg-my-white hover:text-my-blue-dark;
+	}
+
+}
+
+	/*active {
+		@apply bg-my-blue-light text-my-white;
+	}*/
+
+@layer utilities {
+	/*scrollbar reset*/
+	::-webkit-scrollbar {
+	    height: 12px;
+	    width: 10px;
+	    background-color: #E3E1DC;
+	    /*background: red;*/
+	}
+	::-webkit-scrollbar-thumb {
+	    height: 15px;
+	    border-radius: 12px;
+	    /*background: black;*/
+	    background-color: #4FEBE6;
+	}
+
+	/*active*/
+	/* footer */
+	.my-footer-card{
+	  transition: .3s;
+	}
+
+	.my-footer-card::before{
+	  content:'';
+	  width: 120%;
+	  height: 120%;
+	  border-radius: 30%;
+	  background: rgba(79,235,230,1);
+	  position: absolute;
+	  left:-150%;
+	  bottom:-150%;
+	  z-index:-3;
+	}
+
+	.my-footer-card:hover::before{
+	  animation: iconHover 2s 1;
+	  animation-fill-mode: forwards;
+	  color:rgba(227, 225, 220,1);
+	}
+
+	.my-footer-card:hover{
+	  transform: scale(1.1);
+	}
+
+	@keyframes iconHover{
+	  0%{
+	    left:-100%;
+	    bottom:-100%;
+	  }50%{
+	    left:120%;
+	    bottom:120%;
+	  }100%{
+	    left:30%;
+	    bottom:20%;
+	  }
+	}
+	/* stars & twinkle */
+	.star {
+	  --twinkle-duration: "";
+	  --twinkle-delay: "";
+	  --star-size: "";
+	  position: absolute;
+	  width: var(--star-size);
+	  height: var(--star-size);
+	  background: #fff;
+	  border-radius: 50%;
+	  animation: twinkle infinite alternate;
+	  animation-duration: var(--twinkle-duration);
+	  animation-delay: var(--twinkle-delay);
+	}
+	  
+	@keyframes twinkle {
+	    from {
+	        transform: scale(.5);
+	    }
+	    to {
+	        transform: scale(1.5);
+	        box-shadow: 0 0 5px 0.5px rgba(150, 150, 150, 0.6);
+	    }
+	}
+}
